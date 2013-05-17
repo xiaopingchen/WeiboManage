@@ -24,6 +24,7 @@
 		5C5173521746147900FFBF40 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C5173511746147900FFBF40 /* second@2x.png */; };
 		5C5173551746147900FFBF40 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5173531746147900FFBF40 /* FirstViewController.xib */; };
 		5C5173581746147900FFBF40 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5173561746147900FFBF40 /* SecondViewController.xib */; };
+		5C5173621746361C00FFBF40 /* OAuth2.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5173611746361C00FFBF40 /* OAuth2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,8 @@
 		5C5173511746147900FFBF40 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		5C5173541746147900FFBF40 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController.xib; sourceTree = "<group>"; };
 		5C5173571746147900FFBF40 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController.xib; sourceTree = "<group>"; };
+		5C5173601746361C00FFBF40 /* OAuth2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuth2.h; sourceTree = "<group>"; };
+		5C5173611746361C00FFBF40 /* OAuth2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuth2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,7 @@
 		5C5173211746147700FFBF40 = {
 			isa = PBXGroup;
 			children = (
+				5C51735F174635EC00FFBF40 /* WeiboSDK */,
 				5C5173331746147800FFBF40 /* WeiboManage */,
 				5C51732C1746147800FFBF40 /* Frameworks */,
 				5C51732B1746147800FFBF40 /* Products */,
@@ -125,6 +129,15 @@
 				5C5173431746147900FFBF40 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5C51735F174635EC00FFBF40 /* WeiboSDK */ = {
+			isa = PBXGroup;
+			children = (
+				5C5173601746361C00FFBF40 /* OAuth2.h */,
+				5C5173611746361C00FFBF40 /* OAuth2.m */,
+			);
+			name = WeiboSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +215,7 @@
 				5C51733E1746147900FFBF40 /* AppDelegate.m in Sources */,
 				5C5173471746147900FFBF40 /* FirstViewController.m in Sources */,
 				5C51734E1746147900FFBF40 /* SecondViewController.m in Sources */,
+				5C5173621746361C00FFBF40 /* OAuth2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
