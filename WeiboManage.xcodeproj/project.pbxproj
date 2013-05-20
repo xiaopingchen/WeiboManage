@@ -24,6 +24,9 @@
 		5C5173521746147900FFBF40 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C5173511746147900FFBF40 /* second@2x.png */; };
 		5C5173551746147900FFBF40 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5173531746147900FFBF40 /* FirstViewController.xib */; };
 		5C5173581746147900FFBF40 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5173561746147900FFBF40 /* SecondViewController.xib */; };
+		5C8896F31749D10000B07FA0 /* WeiboAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8896F21749D10000B07FA0 /* WeiboAccount.m */; };
+		5C8896F61749D45500B07FA0 /* WeiboAccounts.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8896F51749D45500B07FA0 /* WeiboAccounts.m */; };
+		5C8896FA174A122D00B07FA0 /* WeiboRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8896F9174A122D00B07FA0 /* WeiboRequest.m */; };
 		7AF361D517477953007CDB53 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF361D417477953007CDB53 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7AF361EB17477980007CDB53 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF361D817477980007CDB53 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7AF361EC17477980007CDB53 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF361DB17477980007CDB53 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -68,6 +71,12 @@
 		5C5173511746147900FFBF40 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		5C5173541746147900FFBF40 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController.xib; sourceTree = "<group>"; };
 		5C5173571746147900FFBF40 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController.xib; sourceTree = "<group>"; };
+		5C8896F11749D10000B07FA0 /* WeiboAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboAccount.h; sourceTree = "<group>"; };
+		5C8896F21749D10000B07FA0 /* WeiboAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboAccount.m; sourceTree = "<group>"; };
+		5C8896F41749D45500B07FA0 /* WeiboAccounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboAccounts.h; sourceTree = "<group>"; };
+		5C8896F51749D45500B07FA0 /* WeiboAccounts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboAccounts.m; sourceTree = "<group>"; };
+		5C8896F8174A122D00B07FA0 /* WeiboRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeiboRequest.h; path = WeiboQuery/WeiboRequest.h; sourceTree = "<group>"; };
+		5C8896F9174A122D00B07FA0 /* WeiboRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeiboRequest.m; path = WeiboQuery/WeiboRequest.m; sourceTree = "<group>"; };
 		7AF361D317477953007CDB53 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		7AF361D417477953007CDB53 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		7AF361D717477980007CDB53 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
@@ -192,6 +201,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		5C8896F7174A11D900B07FA0 /* WeiboQuery */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WeiboQuery;
+			sourceTree = "<group>";
+		};
 		7AF361961747783A007CDB53 /* WeiboSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +290,9 @@
 		7AF97A3917491E8E00E0FFD2 /* WeiboEngine */ = {
 			isa = PBXGroup;
 			children = (
+				5C8896F8174A122D00B07FA0 /* WeiboRequest.h */,
+				5C8896F9174A122D00B07FA0 /* WeiboRequest.m */,
+				5C8896F7174A11D900B07FA0 /* WeiboQuery */,
 				7AF97A3A17491E8E00E0FFD2 /* Constant.h */,
 				7AF97A3B17491E8E00E0FFD2 /* OAuth2.h */,
 				7AF97A3C17491E8E00E0FFD2 /* OAuth2.m */,
@@ -283,6 +302,10 @@
 				7AF97A4017491E8E00E0FFD2 /* WeiboSignIn.m */,
 				7AF97A4117491E8E00E0FFD2 /* WeiboSignInViewController.h */,
 				7AF97A4217491E8E00E0FFD2 /* WeiboSignInViewController.m */,
+				5C8896F11749D10000B07FA0 /* WeiboAccount.h */,
+				5C8896F21749D10000B07FA0 /* WeiboAccount.m */,
+				5C8896F41749D45500B07FA0 /* WeiboAccounts.h */,
+				5C8896F51749D45500B07FA0 /* WeiboAccounts.m */,
 			);
 			path = WeiboEngine;
 			sourceTree = "<group>";
@@ -376,6 +399,9 @@
 				7AF97A4417491E8E00E0FFD2 /* WeiboAuthentication.m in Sources */,
 				7AF97A4517491E8E00E0FFD2 /* WeiboSignIn.m in Sources */,
 				7AF97A4617491E8E00E0FFD2 /* WeiboSignInViewController.m in Sources */,
+				5C8896F31749D10000B07FA0 /* WeiboAccount.m in Sources */,
+				5C8896F61749D45500B07FA0 /* WeiboAccounts.m in Sources */,
+				5C8896FA174A122D00B07FA0 /* WeiboRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
