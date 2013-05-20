@@ -20,7 +20,7 @@
 @end
 
 
-@interface WeiboRequest : NSObject
+@interface WeiboRequest : NSObject<ASIHTTPRequestDelegate>
 {
     ASIHTTPRequest *_request;
 }
