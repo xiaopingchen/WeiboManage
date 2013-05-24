@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WeiboSignIn.h"
 
-@interface FirstViewController : UIViewController<WeiboSignInDelegate>
+@interface FirstViewController : UITableViewController<WeiboSignInDelegate>
 {
     WeiboSignIn *_weiboSignIn;
 }

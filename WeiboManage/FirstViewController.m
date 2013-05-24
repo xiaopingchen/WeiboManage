@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 chen xiaoping. All rights reserved.
 //
 
+#import "WeiboAccounts.h"
 #import "FirstViewController.h"
 
 @interface FirstViewController ()
@@ -14,10 +15,20 @@
 
 @implementation FirstViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+
+-(id)init{
+    self = [super init];
     if (self) {
+
+    }
+    return self;
+}
+
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        // Custom initialization
         self.title = NSLocalizedString(@"First", @"First");
         self.tabBarItem.image = [UIImage imageNamed:@"first"];
         _weiboSignIn=[[WeiboSignIn alloc] init];
@@ -36,8 +47,10 @@
     }
     else
     {
+        [[WeiboAccounts shared]addAccountWithAuthentication:auth];
         NSLog(@"succeed");
     }
+    [self.tableView reloadData];
 }
 
 -(void)signIn:(id)sender
@@ -57,5 +70,35 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark -table view data source
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [[WeiboAccounts shared] accounts].count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *cellIdentifier=@"WeiboAccountCell";
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell) {
+        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    WeiboAccount *account=[[[WeiboAccounts shared] accounts]objectAtIndex:indexPath.row];
+    NSString *name=account.screenName;
+    if (!name) {
+        name=account.userId;
+    
+    }
+    cell.textLabel.text=name;
+    
+    return  cell;
+}
+
+
+
+
 
 @end

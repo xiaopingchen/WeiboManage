@@ -11,6 +11,7 @@
 #import "FirstViewController.h"
 
 #import "SecondViewController.h"
+#import "TableDemoViewController.h"
 
 @implementation AppDelegate
 
@@ -18,8 +19,10 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    UIViewController *viewController1 = [[FirstViewController alloc] initWithNibName:@"FirstViewController" bundle:nil];
-    UINavigationController *navFirst=[[UINavigationController alloc] initWithRootViewController:viewController1];
+    UIViewController *viewController1 = [[FirstViewController alloc] initWithStyle:UITableViewStylePlain];
+    TableDemoViewController *tablevc=[[TableDemoViewController alloc] initWithStyle:UITableViewStylePlain];
+    
+    UINavigationController *navFirst=[[UINavigationController alloc] initWithRootViewController:tablevc];
     UIViewController *viewController2 = [[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil];
     self.tabBarController = [[UITabBarController alloc] init];
     self.tabBarController.viewControllers = @[navFirst, viewController2];
